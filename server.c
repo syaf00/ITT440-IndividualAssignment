@@ -13,9 +13,9 @@ int main(int argc, char const *argv[])
     struct sockaddr_in address;
     int addrlen = sizeof(address);
 
-    // HTTP protocol implement
-    char *aboutme = "HTTP/1.1 200 OK\nContent-Type: text/plain\nContent-Length: 73\n\n Hi my>
-    // char *hello = "HTTP/1.1 200 OK\nContent-Type: text/plain\nContent-Length: 53\n\n Hell>
+    // HTTP protocol implementation
+    char *aboutme = "HTTP/1.1 200 OK\nContent-Type: text/plain\nContent-Length: 73\n\n Hi my name is Syafiqah and I study Netcentric Computing. What about you?";
+  
     // Creating socket file descriptor
     if ((server_d = socket(AF_INET, SOCK_STREAM, 0)) == 0)
     {
@@ -50,7 +50,7 @@ int main(int argc, char const *argv[])
     while(1)
     {
         printf("\n==========Waiting for new connection==========\n\n");
-        if ((new_socket = accept(server_d, (struct sockaddr *)&address, (socklen_t*)&addrlen>
+        if ((new_socket = accept(server_d, (struct sockaddr *)&address, (socklen_t*)&addrlen))<0)
         {
             perror("In accept");
             exit(EXIT_FAILURE);
