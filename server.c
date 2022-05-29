@@ -61,8 +61,6 @@ int main(int argc, char const *argv[])
         printf("%s\n",buffer );
         write(new_socket , aboutme , strlen(aboutme));
         printf("+++About Me message sent+++");
-        close(new_socket);
-        
     }
     return 0;
 }
