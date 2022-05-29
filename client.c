@@ -16,7 +16,7 @@ int main(int argc , char *argv[])
                 printf("Could not create socket");
         }
 
-        server.sin_addr.s_addr = inet_addr("192.168.56.104"); //Enter the Server VM ip address
+        server.sin_addr.s_addr = inet_addr("192.168.56.104"); //Server VM IP Address
         server.sin_family = AF_INET;
         server.sin_port = htons( 22 );
 
@@ -36,8 +36,9 @@ int main(int argc , char *argv[])
                 puts("Sending failed");
                 return 1;
         }
-        puts("Data has been Sended\n");
-                    //Receive a reply from the server
+        puts("Data has been sent\n");
+        
+        //Receive a reply from the server
         if( recv(socket_desc, server_reply , 2000 , 0) < 0)
         {
                 puts("Receiving failed");
