@@ -23,7 +23,7 @@ int main(int argc, char const *argv[])
         exit(EXIT_FAILURE);
     }
 
-
+    //prepare sock_addr in structure
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = INADDR_ANY;
     address.sin_port = htons( PORT );
@@ -44,7 +44,7 @@ int main(int argc, char const *argv[])
         perror("In listen");
         exit(EXIT_FAILURE);
     }
-        puts("Listening...");
+        puts("LISTENING...");
 
     //accept incoming connection
     while(1)
@@ -60,7 +60,7 @@ int main(int argc, char const *argv[])
         v_read= read( new_socket , buffer, 30000);
         printf("%s\n",buffer );
         write(new_socket , aboutme , strlen(aboutme));
-        printf("+++-About Me message sent+++");
+        printf("+++About Me message sent+++");
         close(new_socket);
         
     }
