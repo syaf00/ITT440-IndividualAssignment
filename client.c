@@ -47,7 +47,7 @@ int main(int argc , char *argv[])
         puts("Reply has been received\n");
         puts(server_reply);
         
-        close(socket_desc);
+        close(socket_desc);     //close socket descriptor
 
         return 0;
   
