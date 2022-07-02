@@ -28,7 +28,7 @@ int main(int argc , char *argv[])
                 return 1;
         }
 
-        puts("Connected \n");
+        puts("Server is connected to client. \n");
 
         //Send some data
         message = "connect";
